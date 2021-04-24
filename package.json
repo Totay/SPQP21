@@ -1,0 +1,14 @@
+{
+  "name": "spqp21",
+  "version": "1.0.0",
+  "description": "Spring 2021 Quarterly Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Team Guava",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
