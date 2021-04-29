@@ -9,7 +9,7 @@ When commiting, push to a new branch with your name as a title
 - NEVER WORK OFF OF MASTER AND NEVER PUSH TO MASTER
   - YOU WILL GET THE WRATH OF GOD IF YOU DO
 
-### After Cloning the repo
+### After Cloning / Pulling the repo
 Make sure you are not in the main / master branch of your local repo
 
 Run this on the root folder
