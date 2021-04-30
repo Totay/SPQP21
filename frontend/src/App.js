@@ -6,10 +6,13 @@ import Main from './views/Main';
 import EditProfile from './views/EditProfile';
 import ResetPassword from './views/ResetPassword';
 
+// Import components
+import Navigation from './components/Navigation';
+
 function App() {
   return (
     <Router>
-      <div className="App"> NAVIGATION</div>
+      <Navigation></Navigation>
       <Switch>
         <Route exact path="/">
           <Home></Home>
