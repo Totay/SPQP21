@@ -5,6 +5,7 @@ import Home from './views/Home';
 import Main from './views/Main';
 import EditProfile from './views/EditProfile';
 import ResetPassword from './views/ResetPassword';
+import Dav from './views/Dav'
 
 // Import components
 import Navigation from './components/Navigation';
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route exact path="/resetpassword">
           <ResetPassword></ResetPassword>
+        </Route>
+        <Route exact path="/dav">
+          <Dav></Dav>
         </Route>
       </Switch>
     </Router>
