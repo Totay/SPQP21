@@ -7,7 +7,6 @@ const InterestList = ({interests}) => {
     //should there be ordering method for interests, mutual interests first?
     return (
         <div>
-            <h2>Interests</h2>
             <div className = {style['interest-list']}>
                 {
                     interests.map( i => (<InterestCard {...i} />) )

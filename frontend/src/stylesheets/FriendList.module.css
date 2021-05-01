@@ -4,10 +4,10 @@
     background-color:#424950;
     font-family: 'Roboto', sans-serif;
     align-items:center;
-    width:240px;
+    width:auto;
     height: 40px;
     margin:5px; /*adds spacing between different friend cards */
-    font-size:20px;
+    font-size:18px;
 }
 
 /*make it obvious that friend-card can be interacted with*/
