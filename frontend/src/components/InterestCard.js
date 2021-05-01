@@ -8,7 +8,7 @@ const InterestCard = (props) => {
     //leaving space here for more properties, potentially
 
     return (
-        <div className = {style['interest-card']}>
+        <div className = {styleName['interest-card']}>
             <div>{name}</div>
         </div>
     )
