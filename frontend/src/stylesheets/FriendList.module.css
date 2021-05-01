@@ -1,0 +1,26 @@
+.friend-card{
+    display:flex;
+    flex-direction:row;
+    background-color:#424950;
+    font-family: 'Roboto', sans-serif;
+    align-items:center;
+    width:240px;
+    height: 40px;
+    margin:5px; /*adds spacing between different friend cards */
+    font-size:20px;
+}
+
+.friend-card > div {
+    margin: 5px; /*Adds spacing between individual elements of each friend card*/
+}
+
+.friend-card img {
+    border-radius:50%; 
+}
+
+.friend-list{
+    display: inline flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+}
