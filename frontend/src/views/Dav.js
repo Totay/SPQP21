@@ -3,6 +3,7 @@ This is where I will showcase features I've made, so as to prevent merge issues!
 */
 import HeaderBar from '../components/HeaderBar'
 import FriendList from '../components/FriendList'
+import InterestList from '../components/InterestList'
 
 // some images for testing purposes
 //import smile_img from '../images/smile.png'
@@ -39,9 +40,42 @@ const friends = [
         icon:'none',
         status:'offline',
         online:false
-    }
+    },
+    {
+        name:'chancellor_otto_von_bismarck1815',
+        icon:'none',
+        status:'offline',
+        online:false
+    },
 ] //array of FriendCard components, should be replaced with call to backend i suppose
 //these fields are just temporary -- should define in backend
+
+const interests = [
+    {
+        name:'painting'
+    },
+    {
+        name:'waterboarding'
+    },
+    {
+        name:':)'
+    },
+    {
+        name:'smiling >:)'
+    },
+    {
+        name:'crying <:('
+    },
+    {
+        name:'conniving :0'
+    },
+    {
+        name:'curmedgeoning >:0'
+    },
+    {
+        name:'cannoneering 00===  ooo'
+    }
+]
 
 const Dav = () => {
     return (
@@ -49,11 +83,14 @@ const Dav = () => {
             <h1>Dav's Page</h1>    
             <hr></hr>
 
+            <InterestList interests = {interests} />
             <FriendList friends = {friends}></FriendList>
             <b>4/30</b> -- I've created the FriendList component, which is composed of FriendCard components!
             <br /> The code is spread across the components/FriendCard.js, components/FriendList.js, and stylesheets/FriendList.module.css files.
             <br /> I'll have to work on displaying the images (image is on left of name, not working right now)
             <br /> Also, I'm planning on making each Friend Card clickable, and perhaps it would open a popup on click or something.
+            <br /> Also gotta work on some method to deal with long names, implement some overflow functionality.
+            <br /> Maybe also work on some functionality for showing mutual friends with the person you're playing?
 
             <div style = {{height:200}} />
             <HeaderBar></HeaderBar>
