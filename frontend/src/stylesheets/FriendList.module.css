@@ -10,6 +10,12 @@
     font-size:20px;
 }
 
+/*make it obvious that friend-card can be interacted with*/
+.friend-card:hover { 
+    background-color: #C4C4C4;
+    cursor: pointer; 
+}
+
 .friend-card > div {
     margin: 5px; /*Adds spacing between individual elements of each friend card*/
 }
