@@ -1,0 +1,97 @@
+.hangman{
+  background-color: var(--section-bg);
+  height:90vh;
+}
+.hangman_display{
+  padding: 20px;
+  padding-bottom: 0;
+  margin-bottom: -40px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hangman_display p{
+  font-size: 1.7em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hangman_letters{
+  display:flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.hangman_letters_box{
+  border-bottom: 3px solid var(--heading-bg);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width:30px;
+  text-align: center;
+  height:30px;
+}
+.hangman_letters_box p{
+  font-size: 1.5em;
+}
+
+.hangman_input {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.hangman_input form{
+  width:300px;
+  text-align: center;
+}
+
+.hangman_input form input{
+  background-color: unset;
+  border:none;
+  border-bottom: solid 2px var(--heading-bg);
+  color:#efefef;
+  width:30px;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.hangman_startover{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.hangman_startover button{
+  padding: 10px 20px;
+  background-color: var(--red);
+  border-radius: 20px;
+}
+
+.hangman_startover button:hover{
+  padding: 10px 20px;
+  background-color: var(--darkred);
+  border-radius: 20px;
+}
+
+.hangman_used_letters {
+  width:100%;
+  padding: 10px 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.hangman_used_letters p{
+  letter-spacing: 10px;
+  text-align: center;
+}
