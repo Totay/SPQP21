@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {useState} from 'react';
 
 // Import Pages / Views
 import Home from './views/Home';
@@ -9,27 +10,34 @@ import Dav from './views/Dav'
 
 // Import components
 import Navigation from './components/Navigation';
+import ProtectedRoute from './components/Routes/ProtectedRoute';
+
+// Import Context
+import {UserContext} from './components/Context/UserContext';
 
 function App() {
+  const [user, setUser] = useState({
+    id:1,
+    name: 'Totee Setthachuea',
+  });
+
   return (
     <Router>
       <Navigation></Navigation>
       <Switch>
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
-        <Route exact path="/main">
-          <Main></Main>
-        </Route>
-        <Route exact path="/editprofile">
-          <EditProfile></EditProfile>
-        </Route>
-        <Route exact path="/resetpassword">
-          <ResetPassword></ResetPassword>
-        </Route>
-        <Route exact path="/dav">
-          <Dav></Dav>
-        </Route>
+        <UserContext.Provider value={{user, setUser}}>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <ProtectedRoute exact path="/main" component={Main}/>
+          <ProtectedRoute exact path="/editprofile" component={EditProfile}/>
+          <Route exact path="/resetpassword">
+            <ResetPassword></ResetPassword>
+          </Route>
+          <Route exact path="/dav">
+            <Dav></Dav>
+          </Route>
+        </UserContext.Provider>
       </Switch>
     </Router>
   );

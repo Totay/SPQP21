@@ -3,8 +3,11 @@
   --bg: #09141e;
   --section-bg: #2e3338;
   --heading-bg: #424950;
+  --heading-bg-dark: #353a40;
   --red: #de4545;
+  --darkred: #b83d3d;
   --blue: #4570de;
+  --darkblue: #3b5eb8;
 }
 
 /* GLOBAL STYLING */
@@ -58,6 +61,7 @@ nav{
   position: fixed;
   top: 0;
   width:100%;
+  z-index: 10;
 }
 
 nav .container{
@@ -73,4 +77,10 @@ nav .container .nav-items a, button{
 
 nav .container .nav-items a:hover, button:hover{
   color:#ccc;
+}
+
+
+.section-header{
+  padding: 20px;
+  background-color: var(--heading-bg);
 }
