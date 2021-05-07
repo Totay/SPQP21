@@ -1,3 +1,11 @@
 .bio-card{
-    height:150px;
+    margin-bottom: 20px;
+}
+.bio-card h2{
+    border-bottom: 2px #ccc solid;
+    margin-bottom: 20px;
+}
+
+.bio-card p{
+    color:#cecece;
 }

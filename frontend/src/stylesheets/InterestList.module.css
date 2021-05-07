@@ -1,15 +1,16 @@
 .interest-list {
     display:flex;
     flex-wrap:wrap;
-    width: auto;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .interest-card {
     background-color:purple; /*what do the colors mean? maybe add color-coding, or color randomness*/
-    border-radius: 10px/20px;
-    width:20%;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
     text-align:center;
     align-items:center;
-    margin:2%;
-    font-size:13px;
+    font-size:10px;
 }

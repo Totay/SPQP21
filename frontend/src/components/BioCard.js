@@ -6,7 +6,7 @@ const BioCard = (props) => {
     return (
         <div className={style['bio-card']}>
             <h2>Bio</h2>
-            <div>{biography}</div>
+            <p>{biography}</p>
         </div>
     )
 }

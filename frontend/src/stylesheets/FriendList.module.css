@@ -1,13 +1,21 @@
 .friend-card{
     display:flex;
-    flex-direction:row;
-    background-color:#424950;
-    font-family: 'Roboto', sans-serif;
+    background-color:var(--heading-bg);
     align-items:center;
-    width:auto;
-    height: 40px;
-    margin:5px; /*adds spacing between different friend cards */
-    font-size:18px;
+    width:100%;
+    padding: 10px;
+    margin-bottom:10px; /*adds spacing between different friend cards */
+    font-size: 1.3em;
+    overflow:hidden;
+}
+
+.friend-list-wrapper{
+    height: 60vh;
+}
+
+.friend-list-wrapper h2{
+    margin-bottom: 20px;
+    border-bottom: 2px solid #bbb;
 }
 
 /*make it obvious that friend-card can be interacted with*/
@@ -22,11 +30,6 @@
 
 .friend-card img {
     border-radius:50%; 
-}
-
-.friend-list{
-    display: inline flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:flex-start;
+    height:40px;
+    width:40px;
 }
