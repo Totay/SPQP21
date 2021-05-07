@@ -1,0 +1,15 @@
+.profile-display{
+    display:flex;
+    flex-direction:column;
+    background-color:#2E3338;
+    width:300px;
+}
+
+
+.profile-header{
+    display:block;
+    text-align:center;
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+}
