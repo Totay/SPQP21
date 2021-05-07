@@ -8,7 +8,7 @@ import style from '../stylesheets/ProfileDisplay.module.css'
 /*
 gotta work on at what point the data comes from
 */
-const ProfileDisplay = () => {
+const ProfileDisplay = ({friend}) => {
     const friends = [
         {
             name:'marker_greene22',
@@ -82,7 +82,7 @@ const ProfileDisplay = () => {
     return (
         <div className={style['profile-display']}>
             <div className={style['profile-header']}>
-                <img src='none'></img>
+                <img src={friend.img}></img>
                 <h2>Donkus McBonkus</h2>
             </div>
             <InterestList interests = {interests}/>

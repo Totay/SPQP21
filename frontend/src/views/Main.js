@@ -6,6 +6,7 @@ import {UserContext} from '../components/Context/UserContext'
 import Chat from '../components/Chat';
 import Games from '../components/Games';
 import Decision from '../components/Decision';
+import ProfileDisplay from '../components/ProfileDisplay';
 
 const Main = () => {
   const userContext = useContext(UserContext)
@@ -46,8 +47,10 @@ const Main = () => {
     width: '90%',
     margin: 'auto',
     position: 'fixed',
+    height: '90%',
     bottom: '0',
     left: '5%',
+    padding: '0',
   }
 
   const onMadeDecision = () => {
@@ -60,7 +63,7 @@ const Main = () => {
 
   return (
     <main style={mainStyle}>
-      <h1>left menu here</h1>
+      <ProfileDisplay friend={friend}></ProfileDisplay>
       <Chat messages={messages} friend={friend} onSend={onSend}></Chat>
       <Games onFinishedGame={onFinishedGame} friend={friend}></Games>
       {

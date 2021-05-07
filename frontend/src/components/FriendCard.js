@@ -18,8 +18,7 @@ const FriendCard = (props) => {
     return (
         <div className = {style['friend-card']} onClick = {onClick}>
             <div> <img src = {icon} /> </div>
-            <div>{name}</div>
-            <div>{online ? <BiBrightness color = '#58AA43'/> : <BiMoon color = '#4570DE'/>}</div>
+            <p>{name}</p>
         </div>
     )
 }

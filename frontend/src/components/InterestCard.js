@@ -9,7 +9,7 @@ const InterestCard = (props) => {
 
     return (
         <div className = {style['interest-card']}>
-            <div>{name}</div>
+            <p>{name}</p>
         </div>
     )
 }

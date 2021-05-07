@@ -23,9 +23,9 @@ function App() {
 
   return (
     <Router>
-      <Navigation></Navigation>
       <Switch>
         <UserContext.Provider value={{user, setUser}}>
+          <Navigation></Navigation>
           <Route exact path="/">
             <Home></Home>
           </Route>

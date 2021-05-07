@@ -1,6 +1,9 @@
 import {Link} from 'react-router-dom';
+import {useContext} from 'react';
+import {UserContext} from '../components/Context/UserContext';
 
 const Navigation = () => {
+  const userContext = useContext(UserContext);
   return (
     <nav>
       <div className="container">
@@ -10,8 +13,14 @@ const Navigation = () => {
         <div className="nav-items">
           <Link to="/">Home</Link>          
           <Link to="/editprofile">Edit Profile</Link>
-          <button>Login</button>
-          <button>Logout</button>
+          {
+            userContext.user === null &&
+            <button>Login</button>
+          }
+          {
+            userContext.user !== null &&
+            <button>Log Out</button>
+          }
         </div>
       </div>
     </nav>

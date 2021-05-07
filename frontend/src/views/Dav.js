@@ -19,7 +19,6 @@ const Dav = () => {
             <h1>Dav's Page</h1>    
             <hr></hr>
 
-            <ProfileDisplay />
             <b>4/30</b> -- I've created the FriendList component, which is composed of FriendCard components!
             <br /> The code is spread across the components/FriendCard.js, components/FriendList.js, and stylesheets/FriendList.module.css files.
             <br /> I'll have to work on displaying the images (image is on left of name, not working right now)
