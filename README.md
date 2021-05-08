@@ -32,3 +32,14 @@ You want to leave the server running so open a new terminal. To start the reactj
 ```bash
   npm run start
 ```
+
+### MAKE SURE TO SET UP ENVIRONMENT VARIABLE
+If you do not have a .env, create one in the root folder. 
+make sure you have the following set up
+- PORT = can be anything, I said 3000
+- HOST = just set it to localhost
+- DB_USER = the username for mysql
+- DB_PWD = the password for mysql
+
+### Create a database called 'matchpoint'
+Make sure to create the database called 'matchpoint' in your local mysql session
