@@ -16,10 +16,7 @@ import ProtectedRoute from './components/Routes/ProtectedRoute';
 import {UserContext} from './components/Context/UserContext';
 
 function App() {
-  const [user, setUser] = useState({
-    id:1,
-    name: 'Totee Setthachuea',
-  });
+  const [user, setUser] = useState();
 
   return (
     <Router>

@@ -9,7 +9,7 @@ const InterestList = ({interests}) => {
         <div>
             <div className = {style['interest-list']}>
                 {
-                    interests.map( i => (<InterestCard {...i} />) )
+                    interests.map( i => (<InterestCard key={`interestcard_${Math.random() * 1000}`} {...i} />) )
                 }
             </div>
         </div>

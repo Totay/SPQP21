@@ -2,53 +2,14 @@ import InterestList from './InterestList'
 import FriendList from './FriendList'
 import BioCard from './BioCard'
 import style from '../stylesheets/ProfileDisplay.module.css'
-
-
+import {UserContext} from '../components/Context/UserContext';
+import {useContext} from 'react';
 
 /*
 gotta work on at what point the data comes from
 */
-const ProfileDisplay = ({friend}) => {
-    const friends = [
-        {
-            name:'marker_greene22',
-            icon:'none',
-            status:'online',
-            online: true
-        },
-        {
-            name:'jaime_hime42',
-            icon:'none',
-            status:'offline',
-            online: false
-        },
-        {
-            name:'roger_rogerRR',
-            icon:'none',
-            status:'offline',
-            online:false
-        },
-        {
-            name:'mr_smark',
-            icon:'none',
-            status:'online',
-            online:true
-        },
-        {
-            name:'mrs_smark',
-            icon:'none',
-            status:'offline',
-            online:false
-        },
-        {
-            name:'chancellor_otto_von_bismarck1815',
-            icon:'none',
-            status:'offline',
-            online:false
-        },
-    ] //array of FriendCard components, should be replaced with call to backend i suppose
-    //these fields are just temporary -- should define in backend
-    
+const ProfileDisplay = ({friends, onSelectFriend}) => {
+    const userContext = useContext(UserContext);
     const interests = [
         {
             name:'painting'
@@ -82,12 +43,12 @@ const ProfileDisplay = ({friend}) => {
     return (
         <div className={style['profile-display']}>
             <div className={style['profile-header']}>
-                <img src={friend.img}></img>
-                <h2>Donkus McBonkus</h2>
+                <img src={friends[0].img}></img>
+                <h2>{userContext.user.name}</h2>
             </div>
             <InterestList interests = {interests}/>
-            <BioCard biography = {biography}/>
-            <FriendList friends = {friends}/>
+            <BioCard biography = {userContext.user.bio}/>
+            <FriendList friends = {friends} onSelectFriend={onSelectFriend}/>
         </div>
     )
 }

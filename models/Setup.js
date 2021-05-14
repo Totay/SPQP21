@@ -11,6 +11,7 @@ const createUsersTable = () => {
         age int,
         dob date,
         bio text,
+        img varchar(255),
         interests json,
         friends json,
         preferences json
@@ -32,11 +33,10 @@ const createChatTable = () => {
     const sql = `
       CREATE TABLE IF NOT EXISTS chats(
         chat_id int AUTO_INCREMENT PRIMARY KEY,
-        user_a int,
-        user_b int,
-        chat_log json,
-        FOREIGN KEY(user_a) REFERENCES users(user_id),
-        FOREIGN KEY(user_b) REFERENCES users(user_id)
+        user_one int,
+        user_two int,
+        message text,
+        sender int
       )
     `
 

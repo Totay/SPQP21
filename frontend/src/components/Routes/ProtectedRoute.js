@@ -8,7 +8,7 @@ const ProtectedRoute = ({component: Component, ...rest}) => {
     <Route 
       {...rest}
       render={ props => {
-        if(userContext.user !== null){
+        if(userContext.user != null){
           return <Component {...props}/>
         } else {
           return <Redirect to={{pathname: '/', state: {from: props.location}}}/>
