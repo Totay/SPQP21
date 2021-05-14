@@ -10,35 +10,28 @@ import ProfileDisplay from '../components/ProfileDisplay';
 
 const Main = () => {
   const userContext = useContext(UserContext)
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      from: 1,
-      message: "Hello World"
-    },
+
+  const [friends, setFriends] = useState([
     {
       id: 2,
-      from: 2,
-      message: "My name is not world"
+      name: 'Jane Doe',
+      img: 'https://styles.redditmedia.com/t5_2r444/styles/communityIcon_7prxpryije661.jpg?width=256&s=b8adb2c3647bd08d3f778ef9a4f8e8a8fab733f3'
     },
     {
       id: 3,
-      from: 2,
-      message: "it's jeff"
+      name: 'Robert Bay',
+      img: 'https://styles.redditmedia.com/t5_2r444/styles/communityIcon_7prxpryije661.jpg?width=256&s=b8adb2c3647bd08d3f778ef9a4f8e8a8fab733f3'
     },
-  ]);
-
-  const [friend, setFriend] = useState({
-    id: 2,
-    name: 'Jane Doe',
-    img: 'https://styles.redditmedia.com/t5_2r444/styles/communityIcon_7prxpryije661.jpg?width=256&s=b8adb2c3647bd08d3f778ef9a4f8e8a8fab733f3'
-  })
+    {
+      id: 4,
+      name: 'Jennifer Osman',
+      img: 'https://styles.redditmedia.com/t5_2r444/styles/communityIcon_7prxpryije661.jpg?width=256&s=b8adb2c3647bd08d3f778ef9a4f8e8a8fab733f3'
+    },
+  ])
 
   const [showDecision, setShowDecision] = useState(false);
+  const [currentFriend, setCurrentFriend] = useState();
 
-  const onSend = (message) => {
-    setMessages([{id: messages[messages.length - 1].id + 1, from: 1, message: message}, ...messages]);
-  }
 
   const mainStyle = {
     display: 'grid',
@@ -61,14 +54,26 @@ const Main = () => {
     setShowDecision(true);
   }
 
+  const onSelectFriend = (id) => {
+    const desiredFriend = friends.filter((friend) => friend.id == id);
+    console.log(desiredFriend[0]);
+    setCurrentFriend(desiredFriend[0]);
+  }
+
   return (
     <main style={mainStyle}>
-      <ProfileDisplay friend={friend}></ProfileDisplay>
-      <Chat messages={messages} friend={friend} onSend={onSend}></Chat>
-      <Games onFinishedGame={onFinishedGame} friend={friend}></Games>
+      <ProfileDisplay friends={friends} onSelectFriend={onSelectFriend}></ProfileDisplay>
+      {
+        currentFriend != null &&
+        <Chat friend={currentFriend}></Chat>
+      }
+      {
+        currentFriend != null &&
+        <Games onFinishedGame={onFinishedGame} friend={currentFriend}></Games>
+      }
       {
         showDecision &&
-        <Decision friend={friend} onMadeDecision={onMadeDecision}></Decision>
+        <Decision friend={currentFriend} onMadeDecision={onMadeDecision}></Decision>
       }
     </main>
   )

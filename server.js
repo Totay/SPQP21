@@ -5,9 +5,13 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 require('dotenv').config();
 const setupDB = require('./models/Setup');
+const http = require('http');
 
 // variables
 const app = express();
+const server = http.createServer(app);
+const {Server} = require("socket.io");
+const io = new Server(server);
 const sessionStoreOptions = {
   host: process.env.HOST,
   user: process.env.DB_USER,
@@ -41,6 +45,19 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(process.env.PORT, () => {
+app.use('/api/chat', require('./routes/Chat.js'))
+
+io.on('connection', (socket) => {
+  socket.on('change-room', (roomId) => {
+    console.log(`Joined room ${roomId}`);
+    socket.join(roomId)
+  })
+
+  socket.on('send-message', (payload) => {
+    socket.broadcast.to(payload.to).emit('receive-message', payload);
+  })
+})
+
+server.listen(process.env.PORT, () => {
   console.log(`Server started on port ${process.env.PORT}`);
 });
